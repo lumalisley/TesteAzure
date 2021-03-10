@@ -8,10 +8,17 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
+    "test": "test",
+    "cypress:open": "npm run esl && cypress open",
     "cypress:verify": "cypress verify",
-    "cypress:run": "cypress run"
+    "cypress version": "cypress version",
+    "cypress:run:headed": "npm run esl && cypress run --headed",
+    "cypress:run:headless": "npm run esl && cypress run --headless",
+    "cypress:run:reporter": "npm run esl && cypress run --headless --config defealtCommandTimeout=10000 --reporter junit --reporter-open",
+    "cypress:run": "npm run esl && cypress run",
+    "esl": "eslint .",
+    "esl:fix": "eslint --fix ."
+
   },
   "repository": {
     "type": "git",
